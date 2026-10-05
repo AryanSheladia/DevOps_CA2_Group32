@@ -1,7 +1,7 @@
 # NetworkX — simple DevOps proof plan
 
 Updated: 5 October 2026
-Status: Step 1 completed and verified. Steps 2–4 have not started.
+Status: Steps 1 and 2 completed and verified. Steps 3–4 have not started.
 
 ## What we are trying to achieve
 
@@ -36,6 +36,8 @@ One terminology correction: Prometheus collects metrics such as error counts, no
 Proof: upload a CSV through `/docs` and receive the prediction table. This project takes numeric feature CSVs, so that is the demonstration input.
 
 ## Step 2 — deploy on Render
+
+**Complete:** https://networkx-devops-group32.onrender.com/docs is live. Render built the Docker image and the hosted sample prediction passed for all 12 rows. Settings and evidence are saved in `step2-deployment/`.
 
 1. Make the Dockerfile work with the verified environment and Render's port setting.
 2. Add a small `.dockerignore` so logs, old training outputs, and secrets are not copied into the image.
@@ -99,4 +101,4 @@ We need GitHub/Render access and Docker available on your laptop. No paid servic
 
 The hackathon link's event details were not readable during review. Registration and participation proof should be handled separately according to the event's rules.
 
-This replaces the earlier detailed proposal. Step 1 is complete. The next part is Docker/Render deployment when approved.
+This replaces the earlier detailed proposal. Steps 1 and 2 are complete. The next part is Jenkins CI/CD when approved.

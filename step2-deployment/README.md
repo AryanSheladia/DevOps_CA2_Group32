@@ -1,6 +1,13 @@
 # Step 2 — Render deployment
 
-Work started: 5 October 2026.
+**Complete:** deployed and verified on 5 October 2026.
+
+Public app: https://networkx-devops-group32.onrender.com/docs
+
+Render dashboard: https://dashboard.render.com/web/srv-db1slg3ncjis73c6o7k0
+
+Successful deployment: `dep-db1slgrncjis73c6ob30`  
+Application commit: `2aa8419c1fa53fc561936491e5c44fe9f1273c67`
 
 Repository: https://github.com/AryanSheladia/DevOps_CA2_Group32
 
@@ -17,7 +24,7 @@ Repository: https://github.com/AryanSheladia/DevOps_CA2_Group32
 
 | Setting | Value |
 |---|---|
-| Name | networkx-devops-demo |
+| Name | networkx-devops-group32 |
 | Repository | AryanSheladia/DevOps_CA2_Group32 |
 | Branch | main |
 | Runtime | Docker |
@@ -34,9 +41,37 @@ Repository: https://github.com/AryanSheladia/DevOps_CA2_Group32
 
 ## Verification
 
-The updated app passed a local readiness and sample prediction check. Container build and hosted verification results will be recorded here when complete.
+The updated app passed a local readiness and sample prediction check. Render then built the Docker image successfully and reported **Deploy succeeded / Live**. The first deployment took 1 minute 25 seconds. Local Docker Desktop did not provide a running engine during this step; the successful container build and runtime check were performed on Render.
 
-Hosted checks: `/docs`, `/ready`, `/version`, and a real CSV upload to `/predict`.
+Hosted verification passed at approximately **9:37 PM IST on 5 October 2026**:
+
+| Check | Result |
+|---|---|
+| `/health` | HTTP 200, status ok |
+| `/ready` | HTTP 200, model ready |
+| `/version` | HTTP 200, matches application commit above |
+| `/docs` | HTTP 200, Swagger UI available |
+| Sample CSV upload to `/predict` | HTTP 200, all 12 rows predicted from 30 features |
+| `/train` | HTTP 403, training disabled |
+
+Saved evidence:
+
+- `verification.json`: machine-readable hosted check results.
+- `hosted-prediction.html`: actual prediction table returned by Render.
+- `render-live.jpg`: screenshot showing the successful deployment.
+- `verify_deployment.py`: reusable check script using Python's standard library.
+
+Repeat the check from the project root:
+
+```powershell
+.\.venv\Scripts\python.exe step2-deployment/verify_deployment.py https://networkx-devops-group32.onrender.com --expected-commit 2aa8419c1fa53fc561936491e5c44fe9f1273c67
+```
+
+To demonstrate the app, open the public `/docs` page, expand **POST /predict**, click **Try it out**, select `valid_data/test.csv`, and click **Execute**.
+
+The free instance may sleep when idle. Allow time for it to wake before a demonstration. Model files are baked into the image; generated output files are temporary on Render.
+
+Automatic deployment is Off. Evidence/documentation commits may therefore be newer than the running application commit. Jenkins configuration is the next step and has not been started.
 
 No credentials or Render deploy-hook URLs will be placed in committed evidence.
 

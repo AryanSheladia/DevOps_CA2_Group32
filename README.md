@@ -1,5 +1,17 @@
 ### Network Security Project for Phishing Data
 
+## Deployed DevOps assessment demo
+
+**Live app:** <https://networkx-devops-group32.onrender.com/docs>
+
+Step 2 completed on 5 October 2026: Render built the Docker container and the
+public API successfully predicted all 12 rows of the sample CSV. Use **POST
+/predict → Try it out → select `valid_data/test.csv` → Execute**.
+
+See [deployment settings and saved evidence](step2-deployment/README.md).
+Free hosting can take time to wake after inactivity. Jenkins and monitoring
+are the next assessment steps; they are not yet configured.
+
 ## Run the prediction demo (DevOps assessment)
 
 Step 1 verified on 5 October 2026 using Python 3.12.6 and scikit-learn 1.8.0.

@@ -1,6 +1,6 @@
 # Step 1 — working prediction demo
 
-Verified on 5 October 2026. Step 1 is complete; online deployment has not started.
+Verified on 5 October 2026. Step 1 is complete. Online deployment was subsequently completed in Step 2; see `step2-deployment/README.md`.
 
 ## Result
 
@@ -39,4 +39,4 @@ To restart later, run this command from `NetworkX-main`:
 .\.venv\Scripts\python.exe -m uvicorn app:app --host 127.0.0.1 --port 8000
 ```
 
-Next step, when approved: Docker/Render deployment. The existing Dockerfile still uses its old Python base and will be updated in that step.
+Step 2 subsequently updated the Dockerfile and deployed the app on Render. See `step2-deployment/README.md` for the live URL and verification evidence.

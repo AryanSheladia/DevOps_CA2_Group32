@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: networkx-devops-demo
+    name: networkx-devops-group32
     runtime: docker
     plan: free
     region: singapore
