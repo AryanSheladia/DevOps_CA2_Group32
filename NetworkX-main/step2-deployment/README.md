@@ -6,8 +6,10 @@ Public app: https://networkx-devops-group32.onrender.com/docs
 
 Render dashboard: https://dashboard.render.com/web/srv-db1slg3ncjis73c6o7k0
 
-Successful deployment: `dep-db1slgrncjis73c6ob30`  
-Application commit: `2aa8419c1fa53fc561936491e5c44fe9f1273c67`
+Initial deployment: `dep-db1slgrncjis73c6ob30`  
+Initial application commit: `2aa8419c1fa53fc561936491e5c44fe9f1273c67`
+
+After expanding the repository, deployment `dep-db1stcajnfac73eg7f0g` succeeded with application commit `4f25beb2114acbce635d13aee327570451d37e53`. All hosted checks passed again, including predictions for all 12 rows.
 
 Repository: https://github.com/AryanSheladia/DevOps_CA2_Group32
 
@@ -64,7 +66,7 @@ Saved evidence:
 Repeat the check from the project root:
 
 ```powershell
-.\.venv\Scripts\python.exe step2-deployment/verify_deployment.py https://networkx-devops-group32.onrender.com --expected-commit 2aa8419c1fa53fc561936491e5c44fe9f1273c67
+.\.venv\Scripts\python.exe step2-deployment/verify_deployment.py https://networkx-devops-group32.onrender.com --expected-commit 4f25beb2114acbce635d13aee327570451d37e53
 ```
 
 To demonstrate the app, open the public `/docs` page, expand **POST /predict**, click **Try it out**, select `valid_data/test.csv`, and click **Execute**.
@@ -80,3 +82,5 @@ References: [Docker on Render](https://render.com/docs/docker), [Render environm
 ## Repository layout update
 
 At the user's request, the repository was expanded to include the entire case-study assessment: `Step1/`–`Step4/`, the presentation, and `NetworkX-main/`. Git history was preserved. Render's root directory is updated to `NetworkX-main` to keep the app's Dockerfile and serving files together. Local downloaded tools and generated runtime data remain excluded by the root `.gitignore`.
+
+The original numeric training dataset, `Network_Data/phisingData.csv`, is included with the project. The local Git repository is now rooted at `E:\Case Study Devops`; commands from `NetworkX-main` also find that repository automatically.
