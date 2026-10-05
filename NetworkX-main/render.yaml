@@ -2,6 +2,7 @@ services:
   - type: web
     name: networkx-devops-group32
     runtime: docker
+    rootDir: NetworkX-main
     plan: free
     region: singapore
     dockerfilePath: ./Dockerfile

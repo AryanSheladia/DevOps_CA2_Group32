@@ -28,7 +28,7 @@ Repository: https://github.com/AryanSheladia/DevOps_CA2_Group32
 | Repository | AryanSheladia/DevOps_CA2_Group32 |
 | Branch | main |
 | Runtime | Docker |
-| Root directory | empty; project is at repository root |
+| Root directory | NetworkX-main; the repository now contains the full case study |
 | Dockerfile path | ./Dockerfile |
 | Docker context | . |
 | Instance type | Free |
@@ -76,3 +76,7 @@ Automatic deployment is Off. Evidence/documentation commits may therefore be new
 No credentials or Render deploy-hook URLs will be placed in committed evidence.
 
 References: [Docker on Render](https://render.com/docs/docker), [Render environment variables](https://render.com/docs/environment-variables).
+
+## Repository layout update
+
+At the user's request, the repository was expanded to include the entire case-study assessment: `Step1/`–`Step4/`, the presentation, and `NetworkX-main/`. Git history was preserved. Render's root directory is updated to `NetworkX-main` to keep the app's Dockerfile and serving files together. Local downloaded tools and generated runtime data remain excluded by the root `.gitignore`.
