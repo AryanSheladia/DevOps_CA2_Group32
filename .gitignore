@@ -15,3 +15,6 @@ Thumbs.db
 /Step4/downloads/
 /Step4/runtime/
 /Step4/logs/
+
+# Private presentation build files
+/Step5/.build/
