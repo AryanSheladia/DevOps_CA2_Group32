@@ -38,6 +38,15 @@ the assessment demo needs no MongoDB, AWS, or MLflow setup.
 
 See [the Step 1 result](STEP1_RESULT.md) for the checks performed.
 
+## Jenkins CI/CD (Step 3)
+
+The existing local Jenkins service at <http://localhost:8080>, SCM polling job
+instructions, and pipeline stages are documented in
+[`step3-jenkins/README.md`](step3-jenkins/README.md). Configure the Render deploy
+hook in Jenkins as the `render-deploy-hook` Secret text credential; never commit
+the hook URL. The pipeline builds and predicts the sample CSV before deploying,
+then confirms the deployed commit through `/version`.
+
 This repository contains an end-to-end machine learning pipeline for phishing detection:
 - data ingestion
 - data validation

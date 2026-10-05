@@ -1,7 +1,9 @@
 # NetworkX — simple DevOps proof plan
 
 Updated: 5 October 2026
-Status: Steps 1 and 2 completed and verified. Steps 3–4 have not started.
+Status: Steps 1 and 2 completed and verified. Step 3 pipeline files are prepared
+for the existing local Jenkins instance at port 8080; the job/Render credential
+and a successful pipeline run are still pending. Step 4 has not started.
 
 ## What we are trying to achieve
 
@@ -50,6 +52,11 @@ Start with the free option if the application fits. Render free services can sle
 Proof: a screenshot of the public URL and successful prediction.
 
 ## Step 3 — add a small Jenkins pipeline
+
+**Implementation prepared for the existing Jenkins instance:** see
+`step3-jenkins/README.md` and `Jenkinsfile`. Configure the pipeline job and
+Render hook credential, and run the pipeline to verify this step before
+starting Step 4.
 
 1. Run Jenkins locally using Docker with persistent storage.
 2. Give its build environment the tools needed to build and test this project's container.
