@@ -3,7 +3,7 @@
 Updated: 5 October 2026
 Status: Steps 1 and 2 completed and verified. Step 3 pipeline files are prepared
 for the existing local Jenkins instance at port 8080; the job/Render credential
-and a successful pipeline run are still pending. Step 4 has not started.
+and a successful pipeline run are still pending. Step 4 is implemented and verified with the local Docker stack; deployed HTTPS verification is pending Render configuration and deployment. See monitoring/README.md.
 
 ## What we are trying to achieve
 
@@ -74,6 +74,8 @@ Proof: make one small change, push it, and show the green Jenkins stages followe
 
 ## Step 4 — add a basic Prometheus/Grafana dashboard
 
+**Local verification complete:** protected metrics, CSV validation, console logging, and the provisioned Docker dashboard passed seven tests and two real 9-request demonstrations. Prometheus target UP, Grafana datasource OK, 18 requests, 2 client errors, 0 server errors. **Hosted proof pending:** deploy this version and set METRICS_TOKEN on Render, then repeat the demo against the HTTPS target. See monitoring/README.md.
+
 1. Add a health endpoint and a Prometheus metrics endpoint to FastAPI.
 2. Track request count, response duration, and errors by HTTP status. Keep metrics access protected with a token stored in configuration.
 3. Run Prometheus and Grafana locally through Docker Compose.
@@ -102,10 +104,10 @@ What you can tell your sir once this works:
 
 ## Implementation order and approval
 
-We will do this in four small parts: **working app → online deployment → Jenkins → dashboard**. Each part must work before moving to the next.
+We will do this in four small parts: **working app → online deployment → Jenkins → dashboard**. The monitoring stack can be rehearsed locally while the Jenkins setup is finished. Hosted monitoring requires the updated application to be deployed.
 
 We need GitHub/Render access and Docker available on your laptop. No paid services are assumed; account access will be handled when needed.
 
 The hackathon link's event details were not readable during review. Registration and participation proof should be handled separately according to the event's rules.
 
-This replaces the earlier detailed proposal. Steps 1 and 2 are complete. The next part is Jenkins CI/CD when approved.
+Steps 1 and 2 are complete. Step 3 pipeline setup is prepared but still needs its successful run. Step 4 is locally verified; configure the Render metrics token and deploy this version to finish the hosted proof.

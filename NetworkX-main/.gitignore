@@ -37,3 +37,8 @@ Thumbs.db
 .DS_Store
 venv
 .env
+# Step 4 local monitoring secrets and evidence
+monitoring/secrets/
+monitoring/evidence/
+step4-changes.patch
+step4-changes.zip

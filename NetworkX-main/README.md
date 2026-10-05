@@ -9,8 +9,15 @@ public API successfully predicted all 12 rows of the sample CSV. Use **POST
 /predict → Try it out → select `valid_data/test.csv` → Execute**.
 
 See [deployment settings and saved evidence](step2-deployment/README.md).
-Free hosting can take time to wake after inactivity. Jenkins and monitoring
-are the next assessment steps; they are not yet configured.
+Free hosting can take time to wake after inactivity. Jenkins pipeline files are prepared;
+the monitoring stack is implemented and locally verified. Hosted monitoring awaits deployment.
+
+## Step 4 monitoring
+
+See [monitoring setup, local verification, and the hosted demonstration](monitoring/README.md).
+Includes protected Prometheus metrics, Grafana provisioning, clear invalid-CSV 422 responses,
+console error logs, and demo/verification scripts. The local Docker rehearsal passed;
+configure METRICS_TOKEN and deploy on Render to finish the hosted proof.
 
 ## Run the prediction demo (DevOps assessment)
 

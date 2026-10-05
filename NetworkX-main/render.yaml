@@ -10,6 +10,8 @@ services:
     healthCheckPath: /ready
     autoDeployTrigger: "off"
     envVars:
+      - key: METRICS_TOKEN
+        sync: false
       - key: ENABLE_TRAINING
         value: "false"
       - key: OMP_NUM_THREADS
