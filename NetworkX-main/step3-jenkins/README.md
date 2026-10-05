@@ -27,10 +27,11 @@ The job tracks `main`, the branch used by Render. Its five stages are
 container shares Jenkins's network namespace, so the prediction check reaches
 it at `127.0.0.1:8000` without opening another host port.
 
-If the Render deploy hook starts a newer commit than the one Jenkins tested,
-the version check fails instead of reporting a successful deployment. Render
-automatic deployment is already off in `render.yaml`; the old AWS Actions
-workflow runs only on manual dispatch.
+The hook request includes `ref=<tested commit>` and records the deployment ID
+returned by Render. Render's specific-commit hook also turns off its automatic
+deploys for the service. The version check fails if the hosted app does not
+report the tested commit. The old AWS Actions workflow runs only on manual
+dispatch.
 
 To stop the existing Jenkins instance when the demonstration is finished, use
 Docker Desktop's stop control for `myjenkins`. Its saved Jenkins data remains

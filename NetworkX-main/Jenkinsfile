@@ -59,10 +59,12 @@ pipeline {
                 withCredentials([string(credentialsId: 'render-deploy-hook', variable: 'RENDER_DEPLOY_HOOK')]) {
                     sh '''
                         set +x
-                        curl --fail --silent --show-error \
-                            --request POST "$RENDER_DEPLOY_HOOK" \
-                            --output /dev/null
-                        echo 'Render deploy hook accepted the request.'
+                        deploy_url="${RENDER_DEPLOY_HOOK}&ref=${GIT_COMMIT}"
+                        response=$(curl --fail --silent --show-error \
+                            --request POST "$deploy_url")
+                        deploy_id=$(printf '%s' "$response" | python3 -c \
+                            'import json,sys; print(json.load(sys.stdin)["deploy"]["id"])')
+                        echo "Render started deployment $deploy_id for $GIT_COMMIT."
                     '''
                 }
             }
